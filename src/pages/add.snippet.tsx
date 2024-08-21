@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CgWebsite } from "react-icons/cg";
+import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { z } from "zod";
 
@@ -81,7 +83,7 @@ const AddSnippet = () => {
     }
   };
 
-  return (
+  return (<>
     <div className="bg-nit-400 h-full rounded-3xl p-4 mt-5 flex flex-col justify-center">
       <form
         onSubmit={handleSubmit}
@@ -177,6 +179,48 @@ const AddSnippet = () => {
         </div>
       </form>
     </div>
+    <footer className="w-full bg-nit-400 py-4 mt-10 text-center text-slate-500 rounded-2xl">
+    <p className="mb-2">
+      &copy; {new Date().getFullYear()} Snippet. All rights reserved.
+    </p>
+    <div className="flex flex-wrap justify-center gap-4">
+      <a
+        href="https://www.instagram.com/n.bhardwaj_04"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center hover:underline"
+      >
+        <FaInstagram className="mr-2 text-xl" /> Instagram
+      </a>
+      <span className="hidden sm:inline"> | </span>
+      <a
+        href="https://portfolio-nitesh.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center hover:underline"
+      >
+        <CgWebsite className="mr-2 text-xl" /> Portfolio
+      </a>
+      <span className="hidden sm:inline"> | </span>
+      <a
+        href="https://www.linkedin.com/in/nitesh-bhardwaj-87294a252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center hover:underline"
+      >
+        <FaLinkedinIn className="mr-2 text-xl" /> LinkedIn
+      </a>
+      <span className="hidden sm:inline"> | </span>
+      <a
+        href="https://github.com/17Nitesh"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center hover:underline"
+      >
+        <FaGithub className="mr-2 text-xl" /> GitHub
+      </a>
+    </div>
+  </footer></>
   );
 };
 

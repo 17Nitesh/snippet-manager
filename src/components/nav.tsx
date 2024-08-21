@@ -20,7 +20,7 @@ const Nav = () => {
                     <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Home</li>
                 </Link>
                 <Link to={'/add'}>
-                    <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Add Snippets</li>
+                    <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Add Snippet</li>
                 </Link>
                 <Link to={'/search'}>
                     <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Search Snippet</li>
@@ -32,7 +32,7 @@ const Nav = () => {
                     <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Home</li>
                 </Link>
                 <Link to={'/add'}>
-                    <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Add Snippets</li>
+                    <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Add Snippet</li>
                 </Link>
                 <Link to={'/search'}>
                     <li className="cursor-pointer my-4 md:my-0 hover:text-xl transition-all duration-300">Search Snippet</li>
