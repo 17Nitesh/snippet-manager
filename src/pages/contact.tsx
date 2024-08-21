@@ -33,7 +33,7 @@ const Contact = () => {
     try {
       // Validate form data using Zod
       const result = contactSchema.parse(form);
-      console.log(result);
+      
 
       const formData = new FormData();
       formData.append("name", form.name);
