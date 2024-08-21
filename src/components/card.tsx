@@ -51,7 +51,7 @@ const Card = ({ snippet, onDelete }: { snippet: Snippet, onDelete: (id: number) 
   };
 
   return (
-    <div className="flex relative flex-col bg-nit-100 w-80 p-5 rounded-2xl shadow-lg max-h-96 text-lg text-semibold">
+    <div className="flex relative flex-col bg-nit-100 w-full md:w-80 p-5 rounded-2xl shadow-lg max-h-96 text-lg text-semibold">
       <div
         className="absolute top-5 right-5 py-1 px-2 bg-red-500 text-white rounded-full hover:bg-red-700 cursor-pointer"
         onClick={handleDelete}
