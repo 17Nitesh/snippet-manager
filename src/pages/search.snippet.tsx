@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "../components/card.tsx";
+import Card from "../components/card";
 
 interface Snippet {
   id: number;
@@ -35,6 +35,12 @@ const SearchSnippet = () => {
     setSearchQuery(e.target.value.toLowerCase());
   };
 
+  const handleDelete = (id: number) => {
+    const updatedSnippets = snippets.filter(snippet => snippet.id !== id);
+    setSnippets(updatedSnippets);
+    window.localStorage.setItem("snippets", JSON.stringify(updatedSnippets));
+  };
+
   const filteredSnippets = snippets.filter(snippet =>
     snippet.title.toLowerCase().includes(searchQuery) ||
     snippet.description.toLowerCase().includes(searchQuery) ||
@@ -59,7 +65,9 @@ const SearchSnippet = () => {
       </div>
       <div className="min-h-[79vh] h-full flex gap-3 justify-center flex-wrap items-center">
         {filteredSnippets.length > 0 ? (
-          filteredSnippets.map((snippet) => <Card key={snippet.id} snippet={snippet} />)
+          filteredSnippets.map((snippet) => (
+            <Card key={snippet.id} snippet={snippet} onDelete={handleDelete} />
+          ))
         ) : (
           <p className="text-center text-xl">No snippets found</p>
         )}
