@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../components/card";
+import { useNavigate } from "react-router-dom";
 
 interface Snippet {
   id: number;
@@ -13,6 +14,7 @@ const SearchSnippet = () => {
   const [snippets, setSnippets] = useState<Snippet[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchSnippets = () => {
@@ -51,6 +53,9 @@ const SearchSnippet = () => {
   if (loading) {
     return <p className="text-center text-xl">Loading...</p>;
   }
+  const navigateToAdd = ()=>{
+    navigate("/add")
+  }
 
   return (
     <div className="bg-nit-400 h-full rounded-3xl p-4 mt-5">
@@ -68,8 +73,10 @@ const SearchSnippet = () => {
           filteredSnippets.map((snippet) => (
             <Card key={snippet.id} snippet={snippet} onDelete={handleDelete} />
           ))
-        ) : (
+        ) : (<div className=" flex flex-col gap-5 justify-center text-center">
           <p className="text-center text-xl">No snippets found</p>
+          <div className="bg-black text-white rounded-full py-1 text-xl hover:text-2xl hover:py-2 px-6 transition-all duration-300 cursor-pointer" onClick={navigateToAdd}>Add Snippets</div>
+          </div>
         )}
       </div>
     </div>
