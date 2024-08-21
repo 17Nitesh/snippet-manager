@@ -31,7 +31,6 @@ const Contact = () => {
     setResult("Sending....");
 
     try {
-      // Validate form data using Zod
       const result = contactSchema.parse(form);
       console.log(result);
 
@@ -39,7 +38,7 @@ const Contact = () => {
       formData.append("name", form.name);
       formData.append("email", form.email);
       formData.append("message", form.message);
-      formData.append("access_key", "deba6966-d5a7-45db-ae50-2816ebc4ea1c");
+      formData.append("access_key", process.env.REACT_APP_WEB3FORMS_API_KEY || ""); // Use the environment variable
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
