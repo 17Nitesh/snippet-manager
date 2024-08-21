@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <div className="p-4 flex flex-col-reverse md:flex-row gap-5 md:gap-5 justify-center mt-5 md:mt-14 min-h-screen items-center md:items-start">
-        <div className="flex flex-col bg-nit-400 p-8 py-14 rounded-2xl shadow-xl w-[70vw] h-[70vh] gap-10">
+        <div className="flex flex-col bg-nit-400 p-8 py-14 rounded-2xl shadow-xl w-[70vw] min-h-[70vh] gap-10">
           <div className="">
             <h1 className="text-2xl font-bold text-gray-900 md:text-4xl">
               Streamline Your Workflow, Save and Manage Your Snippets
