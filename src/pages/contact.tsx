@@ -31,7 +31,7 @@ const Contact = () => {
     setResult("Sending....");
 
     try {
-      // Validate form data using Zod
+      
       contactSchema.parse(form);
       
 
